@@ -76,7 +76,7 @@ const App = () => {
 
       const lower = value.toLowerCase()
       const filtered = articles
-        .filter(({ title, paragraph }) => (`${title} ${paragraph}`).toLowerCase().includes(lower))
+        .filter(({ title, paragraph }) => (`${title} ${paragraph}`).toLowerCase().includes(lower)) // since we can apply toLowerCase to an object we devided the object into the strign so we look in the title then in the para
         .map((article) => {
           const safe = escapeRegExp(value)
           const regex = new RegExp(`(${safe})`, 'gi')
